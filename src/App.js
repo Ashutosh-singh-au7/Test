@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from 'react';
+import {Switch, Route} from 'react-router-dom';
+import ShowAuthor from './pages/showAuthor';
+import AuthorDetail from './pages/AuthorDetails/authorDetail';
+import PostDetail from './pages/postDetails/postDetail';
+import SideDrawer from './components/SideDrawer';
+import TopLikedPost from './pages/TopLikedPost';
+import TopLikedComment from './pages/TopLikedComment';
+import DescendingLikedPost from './pages/sorted/DescendingPost';
+import DescendingLikeComment from './pages/sorted/DescendingLikedComment';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+    <SideDrawer/>
+        <Switch>
+          <Route exact path='/' component={ShowAuthor} />
+          <Route exact path='/author/:slug' component={AuthorDetail} />
+          <Route exact path='/author/posts/:slug' component={PostDetail} />
+          <Route exact path='/like' component={TopLikedPost} />
+          <Route exact path='/comment' component={TopLikedComment}/>
+          <Route exact path='/like/sorted-post' component={DescendingLikedPost}/>
+          <Route exact path='/like/sorted-comment' component={DescendingLikeComment}/>
+        </Switch>
+    </Fragment>
   );
 }
 

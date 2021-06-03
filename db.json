@@ -1,0 +1,96 @@
+{
+  "author":[
+    {
+      "id": 1,
+      "name": "Ashutosh"
+    },
+    {
+      "id": 2,
+      "name": "Anurag"
+    },
+    {
+      "id": 3,
+      "name": "Arjun"
+    },
+    {
+      "id": 4,
+      "name": "Sunny"
+    },
+    {
+      "id": 5,
+      "name": "Ritu"
+    }
+],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "Ashutosh",
+      "Like": 50
+    },
+    {
+      "title": "JSON SERVER",
+      "author": "Anurag",
+      "id": 2,
+      "Like": 48
+    },
+    {
+      "title": "REACT",
+      "author": "Arjun",
+      "id": 3,
+      "Like": 45
+    },
+    {
+      "title": "BOOTSTRAP",
+      "author": "Sunny",
+      "id": 4,
+      "Like": 40
+    },
+    {
+      "title": "MEDIUM",
+      "author": "Ritu",
+      "id": 5,
+      "Like": 35
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "first comment",
+      "postId": 1,
+      "author": "Ashutosh",
+      "Like": 60
+    },
+    {
+      "id": 2,
+      "body": "second comment",
+      "postId": 2,
+      "author": "Anurag",
+      "Like": 57
+    },
+    {
+      "id": 3,
+      "body": "third comment",
+      "postId": 3,
+      "author": "Arjun",
+      "Like": 55
+    },
+    {
+      "id": 4,
+      "body": "Fourth comment",
+      "postId": 4,
+      "author": "Sunny",
+      "Like": 67
+    },
+    {
+      "id": 5,
+      "body": "Fifth comment",
+      "postId": 5,
+      "author": "Ritu",
+      "Like": 43
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
