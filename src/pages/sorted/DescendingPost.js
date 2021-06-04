@@ -27,18 +27,18 @@ const DescendingLikedPost = ({ history })=>{
             <br/>
             {liked.map((l,i)=>{
                 return (
-                    <Fragment>
-                        <div key={l.title} className="container">
-                        <table key={l.title} className='table table-bordered'>
+                    <Fragment key={i}>
+                        <div className="container">
+                        <table className='table table-bordered'>
                                 <thead className='thead-light'>
-                                    <tr key={i}>
+                                    <tr>
                                         <th scope='col'>Title</th>
                                         <th scope='col'>Author</th>
                                         <th scope='col'>Like</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr key={i}>
+                                    <tr>
                                         <td>{l.title}</td>
                                         <td>{l.author}</td>
                                         <td>{l.Like}</td>

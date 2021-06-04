@@ -32,9 +32,9 @@ const TopLikedComment = ({ history })=>{
             <br/>
             {liked.map((l,i)=>{
                 return (
-                    <Fragment>
-                        <div key={l.body} className="container">
-                        <table key={l.body} className='table table-bordered'>
+                    <Fragment key={i}>
+                        <div className="container">
+                        <table className='table table-bordered'>
                                 <thead className='thead-light success'>
                                     <tr>
                                         <th scope='col'>Body</th>
@@ -43,7 +43,7 @@ const TopLikedComment = ({ history })=>{
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr key={l.body} >
+                                    <tr>
                                         <td>{l.body}</td>
                                         <td>{l.author}</td>
                                         <td>{l.Like}</td>

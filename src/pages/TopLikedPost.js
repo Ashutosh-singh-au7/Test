@@ -10,6 +10,8 @@ const TopLikedPost = ({ history })=>{
         getTopLikedPost().then((res)=>{
             console.log(res.data);
             setLikedPost(res.data);
+        }).catch((err)=>{
+            console.log(err)
         })
     },[]);
 
@@ -32,11 +34,11 @@ const TopLikedPost = ({ history })=>{
             <br/>
             {liked.map((l,i)=>{
                 return (
-                    <Fragment>
-                        <div key={l.title} className="container">
-                        <table key={l.title} className='table table-bordered'>
+                    <Fragment key={i}>
+                        <div className="container">
+                        <table className='table table-bordered'>
                                 <thead className='thead-light'>
-                                    <tr key={i}>
+                                    <tr>
                                         <th scope='col'>Title</th>
                                         <th scope='col'>Author</th>
                                         <th scope='col'>Like</th>
@@ -44,7 +46,7 @@ const TopLikedPost = ({ history })=>{
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td key={i}>{l.title}</td>
+                                        <td>{l.title}</td>
                                         <td>{l.author}</td>
                                         <td>{l.Like}</td>
                                     </tr>
