@@ -22,7 +22,7 @@ const ShowAuthor = ()=>{
             <div className="container-fluid">
             <div className="col pt-4 text-center">
             <hr/>
-            <h1 className="text-info">List of Author</h1>
+            <h1 className="text-danger">List of Author</h1>
             <hr/>
             {author.map((a)=>{
                 return (

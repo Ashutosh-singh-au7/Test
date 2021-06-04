@@ -24,9 +24,10 @@ const TopLikedComment = ({ history })=>{
     return (
         <div className='container text-center'>
             {/*JSON.stringify(liked)*/}
-            <h3><Link to='/'>Back To HomePage</Link></h3>
+            <button className='btn btn-danger btn-raised '><Link to='/'>Back To HomePage</Link></button>
             <br/>
-            <button onClick={onSubmit}>Sort in Descending</button>
+            <br/>
+            <button className='btn btn-primary btn-raised' onClick={onSubmit}>Sort in Descending</button>
             <br/>
             <br/>
             {liked.map((l,i)=>{
@@ -34,7 +35,7 @@ const TopLikedComment = ({ history })=>{
                     <Fragment>
                         <div key={l.body} className="container">
                         <table key={l.body} className='table table-bordered'>
-                                <thead className='thead-light'>
+                                <thead className='thead-light success'>
                                     <tr>
                                         <th scope='col'>Body</th>
                                         <th scope='col'>Author</th>
@@ -42,7 +43,7 @@ const TopLikedComment = ({ history })=>{
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr key={l.body}>
+                                    <tr key={l.body} >
                                         <td>{l.body}</td>
                                         <td>{l.author}</td>
                                         <td>{l.Like}</td>

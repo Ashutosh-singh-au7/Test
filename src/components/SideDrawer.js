@@ -14,15 +14,13 @@ const SideDrawer = () =>{
             drawer: false
         }))
     }
-
     return (
-    <div className="container"  onClick={onClose}>
         <Drawer 
             className='text-center'
             title={`Top post/ Liked and Comment`}
             placement="left"
             // closable={false}
-            // onClose={onClose}
+            onClose={onClose}
             visible={drawer}
         >
             
@@ -45,7 +43,6 @@ const SideDrawer = () =>{
             </button>
         </Link>
         </Drawer>
-        </div>
     )
 };
 

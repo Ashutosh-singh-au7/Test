@@ -33,7 +33,7 @@ const AuthorDetail = ({ match })=>{
 
     const showSingleAuthor = ()=>{
         return (
-            <div className="container-fluid">
+            <div className="container-fluid navbar-header">
             <div className="col text-center pt-4">
             <h1 className="text-info">Author Details</h1>
             <hr/>
@@ -52,11 +52,10 @@ const AuthorDetail = ({ match })=>{
         )
     }
     return (
-        <div className="text-center">
+        <div className="text-center container">
             {showSingleAuthor()}
             <h4><Link to='/'>Back to homepage</Link></h4>
             <hr/>
-            <span className="text-info">Click after horizontal line to close drawer or click on cross to close Drawer </span>
             <hr/>
         </div>
     )

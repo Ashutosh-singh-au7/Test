@@ -24,9 +24,10 @@ const TopLikedPost = ({ history })=>{
     return (
         <div className='container text-center'>
             {/*JSON.stringify(liked)*/}
-            <h3><Link to='/'>Back To HomePage</Link></h3>
+            <button className='btn btn-danger btn-raised '><Link to='/'>Back To HomePage</Link></button>
             <br/>
-            <button onClick={onSubmit}>Sort in Descending</button>
+            <br/>
+            <button className='btn btn-primary btn-raised' onClick={onSubmit}>Sort in Descending</button>
             <br/>
             <br/>
             {liked.map((l,i)=>{
