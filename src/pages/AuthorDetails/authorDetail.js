@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import { drawerActions } from '../../store/reducers/drawer-slice';
 import { getAuthorById, getPostOfAuthor } from '../../ApiFunctions/author';
+import { Tooltip } from 'antd'
+import { ForwardOutlined, RollbackOutlined } from '@ant-design/icons'
 
 const AuthorDetail = ({ match })=>{
     const [value, setValue] = useState([]);
     const [post, setPost] = useState([]);
+    const [tooltip, setTooltip] = useState('Click to see post details');
 
     const dispatch = useDispatch();
     const { drawer } = useSelector((state)=> state.drawer);
@@ -35,14 +38,14 @@ const AuthorDetail = ({ match })=>{
         return (
             <div className="container-fluid navbar-header">
             <div className="col text-center pt-4">
-            <h1 className="text-info">Author Details</h1>
+            <h1 className="text-muted"><u>Author Details</u></h1>
             <hr/>
             <br/>
             <br/>
-            <h2 className="text-success">Name:-- &nbsp;&nbsp;{name}</h2><br/>
+            <h2 className="text-warning">Name <ForwardOutlined />&nbsp;{name}</h2><br/>
             <hr/>
             {author === name ? (
-                <h2> Comment:-- &nbsp;&nbsp;<Link to={`posts/${id}`}>{title}</Link></h2>
+                <h2 className="text-primary"> Comment <ForwardOutlined /> &nbsp;<Tooltip title={tooltip}><Link to={`posts/${id}`}>{title}</Link></Tooltip></h2>
             ) : (
                 ''
             )}
@@ -54,7 +57,7 @@ const AuthorDetail = ({ match })=>{
     return (
         <div className="text-center container">
             {showSingleAuthor()}
-            <h4><Link to='/'>Back to homepage</Link></h4>
+            <h4><Link to='/'><RollbackOutlined/>  Back to homepage</Link></h4>
             <hr/>
             <hr/>
         </div>

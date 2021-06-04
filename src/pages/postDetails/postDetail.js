@@ -1,10 +1,13 @@
 import React, { useState, useEffect, Fragment} from 'react';
 import { Link } from 'react-router-dom';
 import { getPost, getComment } from '../../ApiFunctions/author';
+import { Tooltip } from 'antd'
+import { ForwardOutlined, RollbackOutlined } from '@ant-design/icons'
 
 const PostDetail = ({ match }) =>{
     const [detail,setDetail] = useState([]);
     const [comment,setComment] = useState([]);
+    const [tooltip, setTooltip] = useState('Go to Author Comment Page');
     
     useEffect(()=>{
         getPost(match.params.slug).then((res)=>{
@@ -27,23 +30,25 @@ const PostDetail = ({ match }) =>{
 
     return (
         <div className="container text-center">
-            <h1 className="text-success">Title: {title}</h1>
+            <h1 className="text-muted"><u>Post Details</u></h1>
             <hr/>
-            <h2 className="text-info">Author Name: {author}</h2>
+            <h1 className="text-primary">Title <ForwardOutlined/>{title}</h1>
+            <hr/>
+            <h2 className="text-info">Author Name <ForwardOutlined/>{author}</h2>
             <hr/>
             {postId === id ? (
                 <Fragment>
                 <h3>
-                <span className="text-info">Comment:&nbsp;&nbsp; {body}</span><br/><br/>
+                <span className="text-primary">Comment <ForwardOutlined />&nbsp; {body}</span><br/><br/>
                 <hr/>
-                <span className="text-info">AuthorId:&nbsp;&nbsp; <Link to={`/author/${id}`}>{id}</Link></span>
+                <span className="text-warning">AuthorId <ForwardOutlined/>:&nbsp; <Tooltip title={tooltip}><Link to={`/author/${id}`}>{id}</Link></Tooltip></span>
                 <hr/>
                 </h3>
                 </Fragment>
             ): (
                 'No comment'
             )}
-            <h4><Link to='/'>Back to homepage</Link></h4>
+            <h4><Link to='/'> <RollbackOutlined/> Back to homepage</Link></h4>
         </div>
     )
 };

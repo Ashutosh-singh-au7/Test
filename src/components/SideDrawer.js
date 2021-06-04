@@ -17,7 +17,7 @@ const SideDrawer = () =>{
     return (
         <Drawer 
             className='text-center'
-            title={`Top post/ Liked and Comment`}
+            title={`Top Liked Post and Comment`}
             placement="left"
             // closable={false}
             onClose={onClose}
