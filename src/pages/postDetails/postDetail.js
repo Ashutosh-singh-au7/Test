@@ -41,7 +41,7 @@ const PostDetail = ({ match }) =>{
                 <h3>
                 <span className="text-primary">Comment <ForwardOutlined />&nbsp; {body}</span><br/><br/>
                 <hr/>
-                <span className="text-warning">AuthorId <ForwardOutlined/>:&nbsp; <Tooltip title={tooltip}><Link to={`/author/${id}`}>{id}</Link></Tooltip></span>
+                <span className="text-warning">AuthorId <ForwardOutlined/>&nbsp; <Tooltip title={tooltip}><Link to={`/author/${id}`}>{id}</Link></Tooltip></span>
                 <hr/>
                 </h3>
                 </Fragment>

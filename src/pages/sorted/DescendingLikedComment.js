@@ -1,6 +1,7 @@
 import React,{ useState, useEffect, Fragment} from 'react';
 import { getTopLikedCommentDesc } from '../../ApiFunctions/author';
 import { Link } from 'react-router-dom';
+import { RollbackOutlined } from '@ant-design/icons';
 
 const DescendingLikedPost = ({ history })=>{
     const [liked,setLikedPost] = useState([]);
@@ -19,7 +20,7 @@ const DescendingLikedPost = ({ history })=>{
     return (
         <div className='container text-center'>
             {/*JSON.stringify(liked)*/}
-            <button className='btn btn-danger btn-raised '><Link to='/'>Back To HomePage</Link></button>
+            <button className='btn btn-danger btn-raised '><Link to='/'><RollbackOutlined/> Back To HomePage</Link></button>
             <br/>
             <br/>
             <button className='btn btn-primary btn-raised' onClick={onSubmit}>Sort in Ascending</button>
@@ -27,9 +28,9 @@ const DescendingLikedPost = ({ history })=>{
             <br/>
             {liked.map((l,i)=>{
                 return (
-                    <Fragment>
-                        <div key={l.body} className="container">
-                        <table key={l.body} className='table table-bordered'>
+                    <Fragment key={i}>
+                        <div  className="container">
+                        <table className='table table-bordered'>
                                 <thead className='thead-light'>
                                     <tr>
                                         <th scope='col'>Body</th>
@@ -39,7 +40,7 @@ const DescendingLikedPost = ({ history })=>{
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td key={i}>{l.body}</td>
+                                        <td>{l.body}</td>
                                         <td>{l.author}</td>
                                         <td>{l.Like}</td>
                                     </tr>
